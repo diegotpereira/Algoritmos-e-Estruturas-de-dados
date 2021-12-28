@@ -26,8 +26,8 @@ public class Aluno {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        Aluno outro = (Aluno) obj;
+    public boolean equals(Object o) {
+        Aluno outro = (Aluno) o;
 
         return this.nome.equals(outro.nome);
     }

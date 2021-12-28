@@ -1,25 +1,27 @@
-package br.com.java;
+package br.com.java.vetor;
 
 import br.com.java.modelo.Aluno;
 import br.com.java.modelo.Vetor;
 
-public class TesteAdicionaPorPosicao {
+public class TesteTamanhoLista {
     
     public static void main(String[] args) {
         Aluno a1 = new Aluno();
         Aluno a2 = new Aluno();
         Aluno a3 = new Aluno();
 
-        a1.setNome("João");
-        a2.setNome("José");
-        a3.setNome("Maria");
+        a1.setNome("Rafael");
+        a2.setNome("Paulo");
 
         Vetor lista = new Vetor();
-        lista.adiciona(a1);
-        lista.adiciona(0, a2);
-        lista.adiciona(1, a3);
 
-        System.out.println(lista);
-        
+        lista.adiciona(a1);
+        lista.adiciona(a2);
+
+        System.out.println(lista.tamanho());
+
+        lista.adiciona(a3);
+
+        System.out.println(lista.tamanho());
     }
 }

@@ -1,9 +1,9 @@
-package br.com.java;
+package br.com.java.vetor;
 
 import br.com.java.modelo.Aluno;
 import br.com.java.modelo.Vetor;
 
-public class TestePegaPorPosicao {
+public class TesteContemAluno {
     public static void main(String[] args) {
         Aluno a1 = new Aluno();
         Aluno a2 = new Aluno();
@@ -16,10 +16,12 @@ public class TestePegaPorPosicao {
         lista.adiciona(a1);
         lista.adiciona(a2);
 
-        Aluno aluno1 = lista.pega(0);
-        Aluno aluno2 = lista.pega(1);
+        System.out.println(lista.contem(a1));
+        System.out.println(lista.contem(a2));
 
-        System.out.println(aluno1);
-        System.out.println(aluno2);
+        Aluno aluno = new Aluno();
+        aluno.setNome("Ana");
+
+        System.out.println(lista.contem(aluno));
     }
 }

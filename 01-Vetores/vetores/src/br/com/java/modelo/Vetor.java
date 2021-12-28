@@ -5,21 +5,23 @@ import java.util.Arrays;
 public class Vetor {
     
     //Declarando e Inicializando um array de Aluno com capacidade 100
-    private Aluno[] alunos = new Aluno[3];
+    private Aluno[] alunos = new Aluno[100000];
 
     private int totalDeAlunos = 0;
 
     public void adiciona(Aluno aluno) {
+        garantaEspaco();
         this.alunos[this.totalDeAlunos] = aluno;
         this.totalDeAlunos++;
     }
 
     public void adiciona(int posicao, Aluno aluno) {
+        garantaEspaco();
         if (!this.posicaoValida(posicao)) {
             throw new IllegalArgumentException("Posição inválida");
         }
 
-        for(int i = this.totalDeAlunos -1; i >= posicao; i-=1) {
+        for(int i = this.totalDeAlunos -1; i >= posicao; i--) {
             this.alunos[i + 1] = this.alunos[i];
         }
 
@@ -46,7 +48,7 @@ public class Vetor {
 
     public boolean contem(Aluno aluno) {
         for(int i = 0; i < this.totalDeAlunos; i++) {
-            if (aluno.equals(this.alunos[i])) {
+            if (aluno == this.alunos[i]) {
                 return true;
             }
         }
@@ -67,5 +69,16 @@ public class Vetor {
     }
     private boolean posicaoValida(int posicao) {
         return posicao >= 0 && posicao < this.totalDeAlunos;
+    }
+
+    private void garantaEspaco() {
+        if (this.totalDeAlunos == this.alunos.length) {
+            Aluno[] novoArray = new Aluno[this.alunos.length * 2];
+            for(int i = 0; i < this.alunos.length; i++) {
+                novoArray[i] = this.alunos[i];
+            }
+
+            this.alunos = novoArray;
+        }
     }
 }

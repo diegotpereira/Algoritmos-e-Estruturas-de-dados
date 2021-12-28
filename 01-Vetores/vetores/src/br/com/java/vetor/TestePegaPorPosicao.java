@@ -1,14 +1,12 @@
-package br.com.java;
+package br.com.java.vetor;
 
 import br.com.java.modelo.Aluno;
 import br.com.java.modelo.Vetor;
 
-public class TesteTamanhoLista {
-    
+public class TestePegaPorPosicao {
     public static void main(String[] args) {
         Aluno a1 = new Aluno();
         Aluno a2 = new Aluno();
-        Aluno a3 = new Aluno();
 
         a1.setNome("Rafael");
         a2.setNome("Paulo");
@@ -18,10 +16,10 @@ public class TesteTamanhoLista {
         lista.adiciona(a1);
         lista.adiciona(a2);
 
-        System.out.println(lista.tamanho());
+        Aluno aluno1 = lista.pega(0);
+        Aluno aluno2 = lista.pega(1);
 
-        lista.adiciona(a3);
-
-        System.out.println(lista.tamanho());
+        System.out.println(aluno1);
+        System.out.println(aluno2);
     }
 }
