@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Pilha {
 
-    List<Peca> pecas = new LinkedList<Peca>();
+    private List<Peca> pecas = new LinkedList<Peca>();
     
     public void insere(Peca peca) {
         this.pecas.add(peca);
